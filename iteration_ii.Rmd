@@ -121,6 +121,14 @@ output = map(list_norm, mean_and_sd)
 what if you want a different fuinction?
 
 ```{r}
-output = map(list_norm, IQR)
+output = map(list_norm, median)
 ```
 
+```{r}
+output = map_dbl(list_norm, median)
+```
+
+
+```{r}
+output = map_df(list_norm, mean_and_sd, .id = "input")
+```
