@@ -6,7 +6,7 @@ output: github_document
 ```{r setup, include = FALSE}
 library(tidyverse)
 library(rvest)
-
+library(purrr)
 knitr::opts_chunk$set(
   fig.width = 6,
   fig.asp = .6,
@@ -110,5 +110,17 @@ for (i in 1:4) {
 output[[i]] = mean_and_sd(list_norm[[i]])
 
 }
+```
+
+Lets try map
+
+```{r}
+output = map(list_norm, mean_and_sd)
+```
+
+what if you want a different fuinction?
+
+```{r}
+output = map(list_norm, IQR)
 ```
 
